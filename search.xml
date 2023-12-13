@@ -5,10 +5,12 @@
     <url>/2023/12/13/hello-world-1/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>python</category>
+        <category>golang</category>
+        <category>javascript</category>
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
