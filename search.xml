@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hello-world</title>
-    <url>/2023/12/13/hello-world-1/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>golang</category>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2023/12/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
@@ -40,7 +27,7 @@
       </tags>
   </entry>
   <entry>
-    <title>no-commit-only-pull</title>
+    <title>不 commit 仅仅 pull</title>
     <url>/2023/12/13/no-commit-only-pull/</url>
     <content><![CDATA[<p><strong>工作中可能有一种情况是他人提交了代码，我们需要在此基础上修改，但是有部分自己写的代码未完成，这个时候我们不想提交只想更新一下代码。</strong></p>
 <ul>

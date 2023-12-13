@@ -6,7 +6,7 @@
   <link href="https://resistanceto.github.io/atom.xml" rel="self"/>
   
   <link href="https://resistanceto.github.io/"/>
-  <updated>2023-12-13T06:13:17.364Z</updated>
+  <updated>2023-12-13T06:16:43.254Z</updated>
   <id>https://resistanceto.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>no-commit-only-pull</title>
+    <title>不 commit 仅仅 pull</title>
     <link href="https://resistanceto.github.io/2023/12/13/no-commit-only-pull/"/>
     <id>https://resistanceto.github.io/2023/12/13/no-commit-only-pull/</id>
     <published>2023-12-13T06:12:44.000Z</published>
-    <updated>2023-12-13T06:13:17.364Z</updated>
+    <updated>2023-12-13T06:16:43.254Z</updated>
     
     <content type="html"><![CDATA[<p><strong>工作中可能有一种情况是他人提交了代码，我们需要在此基础上修改，但是有部分自己写的代码未完成，这个时候我们不想提交只想更新一下代码。</strong></p><ul><li>暂存改动（暂存改动的文件，注意：新增的文件不会到暂存区）</li></ul><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure></div><ul><li>获取远程分支（获取当前分支时，可以只写 git fetch）</li></ul><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch &lt;remote&gt;</span><br></pre></td></tr></table></figure></div><ul><li>合并远程分支（同上）</li></ul><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;remote&gt;</span><br></pre></td></tr></table></figure></div><ul><li>还原暂存的修改</li></ul><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure></div><p><strong>此时即可达到不 commit 直接拉下来代码的效果</strong></p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git stash               <span class="comment"># 暂存当前改动且未commit的文件</span></span><br><span class="line">git fetch &lt;remote&gt;      <span class="comment"># 获取远程分支</span></span><br><span class="line">git merge &lt;remote&gt;      <span class="comment"># 合并远程分支到本地分支</span></span><br><span class="line">git stash pop           <span class="comment"># 还原被暂存的问题</span></span><br></pre></td></tr></table></figure></div>]]></content>
     
@@ -39,27 +39,6 @@
     
     
     <category term="git" scheme="https://resistanceto.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hello-world</title>
-    <link href="https://resistanceto.github.io/2023/12/13/hello-world-1/"/>
-    <id>https://resistanceto.github.io/2023/12/13/hello-world-1/</id>
-    <published>2023-12-13T03:00:46.000Z</published>
-    <updated>2023-12-13T05:46:34.850Z</updated>
-    
-    
-    
-    
-    <category term="golang" scheme="https://resistanceto.github.io/categories/golang/"/>
-    
-    <category term="javascript" scheme="https://resistanceto.github.io/categories/golang/javascript/"/>
-    
-    
-    <category term="python" scheme="https://resistanceto.github.io/tags/python/"/>
-    
-    <category term="java" scheme="https://resistanceto.github.io/tags/java/"/>
     
   </entry>
   
