@@ -1,5 +1,5 @@
 ---
-title: no-commit-only-pull
+title: 不 commit 仅仅 pull
 date: 2023-12-13 14:12:44
 tags:
   - git
