@@ -32,17 +32,11 @@
     <content><![CDATA[<p>刚入门 macOS 逆向的一位萌新，借一个简单的应用记录一下成果。</p>
 <p>首先准备个两个软件，ida pro 和 hopper（demo版即可），用来做静态分析。应该具备一些基本 C 语言知识，我的电脑是 m1，所以文章内展示的都是 ARM 系列的，之前的 intel 版本就选择 X86_64</p>
 <p>今天的目标是 Macs Fan Control 用这个软件来做个例子，因为足够简单。</p>
-<ol>
-<li>初步准备</li>
-</ol>
-<p>在应用程序里面右键软件包 Macs Fan Control，显示包内容，可以看到这个程序的内部文件，我们的目光注意在MacOS这个文件夹内的和软件同名的二进制文件，这个文件就是主程序。我们把他复制一份到其他地方，下载或文档等其他目录里面。</p>
+<h2 id="1-初步准备"><a href="#1-初步准备" class="headerlink" title="1. 初步准备"></a>1. 初步准备</h2><p>在应用程序里面右键软件包 Macs Fan Control，显示包内容，可以看到这个程序的内部文件，我们的目光注意在MacOS这个文件夹内的和软件同名的二进制文件，这个文件就是主程序。我们把他复制一份到其他地方，下载或文档等其他目录里面。</p>
 <p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image.png" alt="Alt text"></p>
 <p>将复制出来的二进制文件拉到ida和hopper中，选择自己的系统架构。先用hopper加载，因为他的字符串搜索功能比较好用（个人观点）。</p>
 <p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-1.png" alt="Alt text"></p>
-<ol start="2">
-<li>开始分析</li>
-</ol>
-<p>我们打开目标软件看一下关于里面的信息</p>
+<h2 id="2-开始分析"><a href="#2-开始分析" class="headerlink" title="2. 开始分析"></a>2. 开始分析</h2><p>我们打开目标软件看一下关于里面的信息</p>
 <p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-2.png" alt="Alt text"></p>
 <p>可以看到有一个Free version的字样，我们在hopper中搜索一下，切换到Str这个地方搜索，这个是搜索字符串。</p>
 <p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-3.png" alt="Alt text"></p>
@@ -54,10 +48,7 @@
 <p>ida里面的伪代码我们可以看到，ProVersion这个块是LABEL72，这个块里面，第一行是一个判断 <code>if ( !(unsigned int)sub_100028588(QCoreApplication::self) )</code> 我们进到这个函数里面看一下。</p>
 <p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-7.png" alt="Alt text"></p>
 <p>可以看到函数里面有一个pro-version到字样，或许是关键点，并且这个函数返回一个int类型，结合判断条件 <code>if ( !(unsigned int)sub_100028588(QCoreApplication::self) )</code> 来说，如果返回值是0，取反条件成立，就执行下面的 <code>goto LABEL_91</code> 我们不让他跳走，让他继续往下走到ProVersion这个地方。就把这个函数返回值写死成1，这样就可以了。</p>
-<ol start="3">
-<li>开始修改程序</li>
-</ol>
-<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-8.png" alt="Alt text"></p>
+<h2 id="3-开始修改程序"><a href="#3-开始修改程序" class="headerlink" title="3. 开始修改程序"></a>3. 开始修改程序</h2><p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-8.png" alt="Alt text"></p>
 <p>这是我们改完之后的样子，先到函数第一行，按tab切换到汇编界面，然后按下control+option+k，跳出修改窗口</p>
 <p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E9%80%86%E5%90%91%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/image-9.png" alt="Alt text"></p>
 <p>第一行改成 <code>mov x0, #1</code> 第二行改成 <code>ret</code></p>
