@@ -3,19 +3,19 @@
   <entry>
     <title>Hello World</title>
     <url>/2023/12/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <categories>
         <category>golang</category>
@@ -24,6 +24,36 @@
       <tags>
         <tag>python</tag>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS尝试破解Macs Fan Control软件pro版</title>
+    <url>/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/</url>
+    <content><![CDATA[<p>刚入门 macOS 逆向，找一个比较简单的 app 来试试水。</p>
+<p>软件刚打开主界面长这样：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image.png" alt="Alt text"></p>
+<p>可以看到主界面的窗体上有 Free 的字样，打开关于看一眼：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-1.png" alt="Alt text"></p>
+<p>有一个 Free version，加载 hopper 查询一下</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-2.png" alt="Alt text"></p>
+<p>关于这个窗体里面，分了一个免费版和破解版，跟过去看一下伪代码。大串大串的 Qxxxx，八成是个 Qt 程序，hopper 的伪代码没看出来个啥，用 ida 的伪代码看下。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-3.png" alt="Alt text"></p>
+<p>有一些什么判断，我们让他跳到 ProVersion 行这里试试，来分析一波怎么让程序跳过来。这里有一个判断，会直接 goto 走，进去看看是干啥的。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-4.png" alt="Alt text"></p>
+<p>有一个 <code>QObject::property(a1, &quot;pro-version&quot;);</code> 这样的东西，或许是用来判断的。</p>
+<p>外面的判断条件是 <code>if ( !(unsigned int)sub_100028588(QCoreApplication::self) )</code> 有一个取反，也就是返回 0 就 goto label91，非 0 就往下走。我们直接写死一个返回 1，直接把这个函数改了。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-5.png" alt="Alt text"></p>
+<p>函数第一行就返回个 1，下面的函数就都不用走了。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-6.png" alt="Alt text"></p>
+<p>改了之后，我们保存一下修改，然后替换测试一下</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-11.png" alt="Alt text"></p>
+<p>刚进来已经看到主界面变了，标题已经变成 pro 了，看一下关于。确实是很简单的一个 app，到此破解成功了。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-12.png" alt="Alt text"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2023/12/14/macOS%E5%B0%9D%E8%AF%95%E7%A0%B4%E8%A7%A3Macs-Fan-Control%E8%BD%AF%E4%BB%B6pro%E7%89%88/image-13.png" alt="Alt text"></p>
+]]></content>
+      <tags>
+        <tag>macOS逆向</tag>
+        <tag>软件破解</tag>
       </tags>
   </entry>
   <entry>
